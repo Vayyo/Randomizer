@@ -1,1 +1,1 @@
-View the live demo - 
+View the live demo - https://vayyo.github.io/Randomizer/
