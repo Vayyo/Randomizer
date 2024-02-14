@@ -22,14 +22,22 @@ header {
   text-decoration: underline;
 }
 
-main{
-    width: 90%;
+main {
+  width: 90%;
+  flex-grow: 1;
+  display: grid;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  width: min(100%, 507px);
 }
 
 button {
@@ -52,4 +60,11 @@ button:hover {
 
 .output {
   display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.output > h3 {
+  font-size: min(6vmin, calc(2rem + 1.2vmax));
 }
