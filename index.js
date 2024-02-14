@@ -1,6 +1,5 @@
 const input = document.querySelector(".input");
 const output = document.querySelector(".output > h3");
-const itemListElements = document.querySelectorAll("ul > li");
 
 let itemList = [];
 let currentIndex = 0;
@@ -13,6 +12,7 @@ function shuffle(array) {
 }
 
 function shuffleItemList() {
+  const itemListElements = document.querySelectorAll("ul > li");
   itemList = Array.from(itemListElements)
     .map((item) => item.textContent)
     .filter((item) => item !== "");
@@ -33,10 +33,6 @@ document.addEventListener("click", function (e) {
 });
 
 function accept() {
-  if (itemList.length === 0) {
-    alert("No more items left");
-    return;
-  }
   itemList.splice(currentIndex, 1);
   updateOutput();
 }
@@ -50,5 +46,9 @@ function updateOutput() {
   output.textContent = randomItem;
   input.style.display = "none";
   document.querySelector(".output").style.display = "flex";
+  if (itemList.length === 0) {
+    alert("No more items left");
+    window.location.reload();
+    return;
+  }
 }
-
